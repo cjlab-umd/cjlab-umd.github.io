@@ -5,19 +5,20 @@ This repository is for maintaining the website of the Computational Journalism L
 + Create a new html file in the `_posts` directory.
 + Add the following front matter.
 
-``
+```
 ---
 layout: project
 header:
-  teaser: /assets/images/baitbuster-1.jpg
+  teaser: /assets/images/example.png
 classes: wide
-title: "BaitBuster"
-date: 2020-06-16T00:00:00-04:00
+title: "Title of the Project"
+date: 20XX-XX-XXT00:00:00-04:00
 categories:
   - Computational Journalism
+  - Another Category
 tags:
   - Clickbait
   - NLP
 short-name: baitbuster
 ---
-``
+```
