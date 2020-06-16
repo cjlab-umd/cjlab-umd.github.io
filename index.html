@@ -30,7 +30,8 @@ feature_row:
     <h2>Recent News</h2>
     <div class='scrollable'>
       <table>
-      {% for event in site.data.events %}
+      {% assign events = site.data.events | sort: 'Date' | reverse %}
+      {% for event in events %}
         <tr>
           <td>
             {% if event.Type == 'Talk' %}
@@ -44,7 +45,7 @@ feature_row:
             {% endif %}
           </td>
           <td>
-            {{event.Date}}. {{event.Event}}
+            <span class="badge">{{event.Date}}</span> {{event.Event}}
             {% if event.URL %}
               <a href="{{event.URL}}">{{event.URL}}</a>
             {% endif %}

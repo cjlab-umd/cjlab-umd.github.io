@@ -38,3 +38,16 @@ div.page__related{
   overflow-y: scroll;
   max-height: 500px;
 }
+
+.badge {
+  background-color: #fff;
+  border: none;
+  color: black;
+  padding: 0px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  cursor: pointer;
+  border-radius: 5px;
+}
