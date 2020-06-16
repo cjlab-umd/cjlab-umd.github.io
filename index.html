@@ -39,6 +39,9 @@ feature_row:
             {% if event.Type == 'Paper' %}
               <i class="fas fa-paperclip"></i>
             {% endif %}
+            {% if event.Type == 'New Member' %}
+            <i class="fas fa-user-plus"></i>
+            {% endif %}
           </td>
           <td>
             {{event.Date}}. {{event.Event}}
