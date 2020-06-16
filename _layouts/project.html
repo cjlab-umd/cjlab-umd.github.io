@@ -1,0 +1,59 @@
+---
+layout: single
+---
+<link rel="stylesheet" href="{{'/assets/css/styles.css' | prepend: site.baseurl}}">
+
+<section class="page__content" itemprop="text">
+  {% assign image_counter = 0 %}
+  {% for image in site.static_files %}
+    {% if image.path contains page.short-name %}
+      {% assign image_counter = image_counter | plus:1 %}
+    {% endif %}
+  {% endfor %}
+  {% if image_counter == 1 %}
+  <figures>
+  {% endif %}
+  {% if image_counter == 2 %}
+  <figure class="half">
+  {% endif %}
+  {% if image_counter == 3 %}
+  <figure class="third">
+  {% endif %}
+  {% for image in site.static_files %}
+    {% if image.path contains page.short-name %}
+      <img src="{{ image.path | prepend: site.baseurl}}" alt="">
+    {% endif %}
+  {% endfor %}
+  </figure>
+
+  {{ content }}
+  {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+
+  <h3>Related Publications</h3>
+  <table>
+  {% assign citations_grouped_by_year = site.data.citations | where_exp:'item', "page.tags contains item.Tags"  | sort: 'Year' | reverse | group_by: 'Year' %}
+  {% for year in citations_grouped_by_year %}
+    <tr>
+    <td><h3>{{year.name}}</h3></td>
+    </tr>
+    {% for citation in year.items %}
+    <tr>
+      <td>
+      {{citation.Authors}}. {{citation.Title | capitalize}}. <i>{{citation.Publication}}</i>. {{citation.Year}}
+      </td>
+      <td>
+        {% if citation.Paper %}
+        <a href="{{citation.Paper}}"><i class="fas fa-paperclip"></i></a>
+        {% endif %}
+        {% if citation.Presentation %}
+        <a href="{{citation.Presentation}}"><i class="fas fa-file-powerpoint"></i></a>
+        {% endif %}
+        {% if citation.Poster %}
+        <a href="{{citation.Poster}}"><i class="fas fa-map"></i></a>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  {% endfor %}
+  </table>
+</section>

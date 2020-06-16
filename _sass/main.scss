@@ -1,0 +1,40 @@
+.archive {
+  float: left;
+  width: 100%;
+}
+
+.grid__item .archive__item-teaser { max-height: 180px; }
+
+.wrapper {
+  padding: 10px;
+}
+
+article.page{
+    float: left;
+    width: 100%;
+}
+
+div.page__related{
+    float: left;
+    width: 100%;
+}
+
+.image--cover {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px;
+
+  object-fit: cover;
+  object-position: center right;
+}
+
+.map {
+  margin-left: 80px;
+}
+
+.scrollable {
+  overflow-x: scroll;
+  overflow-y: scroll;
+  max-height: 500px;
+}

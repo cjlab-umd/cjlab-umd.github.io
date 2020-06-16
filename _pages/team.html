@@ -1,0 +1,39 @@
+---
+permalink: /team/
+title: "Team"
+---
+<link rel="stylesheet" href="{{'/assets/css/styles.css' | prepend: site.baseurl}}">
+
+<table>
+  {% for member in site.data.members %}
+  <tr>
+    <td>
+      <div class="wrapper">
+        {% for image in site.static_files %}
+          {% if image.path contains member.PhotoPath %}
+            <img src="{{ image.path | prepend: site.baseurl}}" alt="" class="image--cover">
+          {% endif %}
+        {% endfor %}
+      </div>
+    </td>
+    <td>
+      <div>
+        {{member.Name}}</br>
+        {{member.Role}}</br>
+        Period: {{member.StartYear}} - {{member.EndYear}}</br>
+        {{member.Affiliation}}</br>
+        {% if member.ResearchArea %}
+        Research Area: {{member.ResearchArea}}</br>
+        {% endif %}
+        <i class="fas fa-envelope"></i> <a href="mailto:{{member.Email}}">{{member.Email}}</a>
+        {% if member.Twitter %}
+        <i class="fab fa-twitter"></i> <a href="https://twitter.com/{{member.Twitter}}">{{member.Twitter}}</a>
+        {% endif %}
+        {% if member.Website %}
+        <i class="fas fa-globe"></i> <a href="{{member.Website}}">{{member.Website}}</a>
+        {% endif %}
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>

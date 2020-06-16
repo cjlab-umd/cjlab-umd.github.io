@@ -1,0 +1,32 @@
+---
+permalink: /publications/
+title: "Publications"
+---
+<h2>Publications</h2>
+
+<table>
+{% assign citations_grouped_by_year = site.data.citations | sort: 'Year' | reverse | group_by: 'Year' %}
+{% for year in citations_grouped_by_year %}
+  <tr>
+  <td><h3>{{year.name}}</h3></td>
+  </tr>
+  {% for citation in year.items %}
+  <tr>
+    <td>
+    {{citation.Authors}}. {{citation.Title | capitalize}}. <i>{{citation.Publication}}</i>. {{citation.Year}}
+    </td>
+    <td>
+      {% if citation.Paper %}
+      <a href="{{citation.Paper}}"><i class="fas fa-paperclip"></i></a>
+      {% endif %}
+      {% if citation.Presentation %}
+      <a href="{{citation.Presentation}}"><i class="fas fa-file-powerpoint"></i></a>
+      {% endif %}
+      {% if citation.Poster %}
+      <a href="{{citation.Poster}}"><i class="fas fa-map"></i></a>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+{% endfor %}
+</table>
