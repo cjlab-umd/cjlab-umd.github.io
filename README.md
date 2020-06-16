@@ -19,6 +19,15 @@ categories:
 tags:
   - Clickbait
   - NLP
-short-name: baitbuster
+short-name: a short descriptive phrase, for example, 'big-project'
 ---
+```
++ Add relevant images in the `assets/images/` directory. The image names should start with the `short-name`. For example, `big-project-1.png`.
++ Use imagemagick to resize the images to 960x540 resolution by following the command. Note that it will change the aspect-ratio.
+```
+convert "big-project-1.png" -resize 960x540! -quality 100 "big-project-1.png"
+```
++ If the aspect-ratio needs to be preserved, then use the following command to crop from the center.
+```
+convert "big-project-1.png" -resize 960x540^ -gravity center -crop 960x540+0+0 "big-project-1.png"
 ```
