@@ -30,7 +30,7 @@ feature_row:
     <h2>Recent News</h2>
     <div class='scrollable'>
       <table>
-      {% assign events = site.data.events | sort: 'Date' | reverse %}
+      {% assign events = site.data.events | sort: 'Date' | reverse | slice: 0, 5 %}
       {% for event in events %}
         <tr>
           <td>
@@ -52,5 +52,6 @@ feature_row:
           </td>
         </tr>
       {% endfor %}
+      <tr><td colspan="2"><i>Check the <a href='/events/'><b>Events</b></a> section for more news.</i></td></tr>
       </table>
     </div>
