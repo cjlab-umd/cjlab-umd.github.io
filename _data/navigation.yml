@@ -9,7 +9,7 @@ main:
     url: /team/
   # - title: "Datasets"
   #   url: /datasets/
-  # - title: "Research Sponsors"
-  #   url: /sponsors/
+  - title: "Sponsors"
+    url: /sponsors/
   - title: "About"
     url: /about/
