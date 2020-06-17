@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    {% if event.Type == 'Talk' %}
+      <i class="fas fa-comment"></i>
+    {% endif %}
+    {% if event.Type == 'Paper' %}
+      <i class="fas fa-paperclip"></i>
+    {% endif %}
+    {% if event.Type == 'New Member' %}
+    <i class="fas fa-user-plus"></i>
+    {% endif %}
+    {% if event.Type == 'Grant' %}
+    <i class="fas fa-money-bill-wave"></i>
+    {% endif %}
+  </td>
+  <td>
+    <span class="badge">{{event.Date}}</span> {{event.Event}}
+    {% if event.URL %}
+      <a href="{{event.URL}}">{{event.URL}}</a>
+    {% endif %}
+  </td>
+</tr>

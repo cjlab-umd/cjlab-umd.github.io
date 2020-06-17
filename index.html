@@ -32,25 +32,7 @@ feature_row:
       <table>
       {% assign events = site.data.events | sort: 'Date' | reverse | slice: 0, 5 %}
       {% for event in events %}
-        <tr>
-          <td>
-            {% if event.Type == 'Talk' %}
-              <i class="fas fa-comment"></i>
-            {% endif %}
-            {% if event.Type == 'Paper' %}
-              <i class="fas fa-paperclip"></i>
-            {% endif %}
-            {% if event.Type == 'New Member' %}
-            <i class="fas fa-user-plus"></i>
-            {% endif %}
-          </td>
-          <td>
-            <span class="badge">{{event.Date}}</span> {{event.Event}}
-            {% if event.URL %}
-              <a href="{{event.URL}}">{{event.URL}}</a>
-            {% endif %}
-          </td>
-        </tr>
+        {% include event-list.html %}
       {% endfor %}
       <tr><td colspan="2"><i>Check the <a href='/events/'><b>Events</b></a> section for more news.</i></td></tr>
       </table>
