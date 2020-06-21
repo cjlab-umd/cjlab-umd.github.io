@@ -33,12 +33,6 @@ div.page__related{
   margin-left: 80px;
 }
 
-.scrollable {
-  overflow-x: scroll;
-  overflow-y: scroll;
-  max-height: 500px;
-}
-
 .badge {
   background-color: #fff;
   border: none;
@@ -50,4 +44,9 @@ div.page__related{
   margin: 0px 0px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.sponsor {
+  max-width: 400px;
+  max-height: 150px;
 }

@@ -28,7 +28,7 @@ feature_row:
 <link rel="stylesheet" href="{{'/assets/css/styles.css' | prepend: site.baseurl}}">
 
     <h2>Recent News</h2>
-    <div class='scrollable'>
+    <div>
       <table>
       {% assign events = site.data.events | sort: 'Date' | reverse | slice: 0, 5 %}
       {% for event in events %}
