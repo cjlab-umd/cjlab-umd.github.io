@@ -13,7 +13,7 @@ title: "Publications"
   {% for citation in year.items %}
   <tr>
     <td>
-    {{citation.Authors}}. {{citation.Title | capitalize}}. <i>{{citation.Publication}}</i>. {{citation.Year}}
+    {{citation.Authors}}. {{citation.Title | camelize}}. <i>{{citation.Publication}}</i>. {{citation.Year}}
     </td>
     <td>
       {% if citation.Paper %}
