@@ -29,7 +29,7 @@ feature_row:
 
     <h2>Recent News</h2>
     <table>
-    {% assign events = site.data.events | sort: 'Date' | reverse | slice: 0, 5 %}
+    {% assign events = site.data.events | sort: 'Date' | reverse | slice: 0, 6 %}
     {% for event in events %}
       {% include event-list.html %}
     {% endfor %}
