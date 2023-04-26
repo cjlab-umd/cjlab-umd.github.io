@@ -12,6 +12,9 @@
     {% if event.Type == 'Grant' %}
     <i class="fas fa-money-bill-wave"></i>
     {% endif %}
+    {% if event.Type == 'Award' %}
+    <i class="fa-solid fa-award"></i>
+    {% endif %}
   </td>
   <td>
     <span class="badge">{{event.Date}}</span> {{event.Event}}
